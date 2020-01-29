@@ -66,18 +66,18 @@ public class GetBadgesNegativeTest {
         };
     }
 
-    @Test(description = "Get badge tags using invalid access key")
-    public void getBadgeTagsWithInvalidAccessKey() {
-        ValidatableResponse validatableResponse = GetBadgeTagsBaseScript.getBadgeTags("iK7iijIWf4K5dhBtFJUnig((");
+    @Test(description = "Get badge tags using invalid access key" , dataProvider = "invalidAccessKey")
+    public void getBadgeTagsWithInvalidAccessKey(String accessKey) {
+        ValidatableResponse validatableResponse = GetBadgeTagsBaseScript.getBadgeTags(accessKey);
         Assert.assertEquals(validatableResponse.extract().statusCode(), HttpStatusCode.HTTP_400, "Verify status code");
         Assert.assertEquals(validatableResponse.extract().body().path("error_id"), Error.ERROR_ID_400, "Verify error_id fail");
         Assert.assertEquals(validatableResponse.extract().body().path("error_message"), Error.ERROR_MESSAGE_400, "Verify error_message fail");
         Assert.assertEquals(validatableResponse.extract().body().path("error_name"), Error.ERROR_NAME_400, "Verify error_name fail");
     }
 
-    @Test(description = "Get badge recipient using invalid access key")
-    public void getBadgeRecipientWithInvalidAccessKey() {
-        ValidatableResponse validatableResponse = GetBadgeRecipient.getBadgeRecipient("iK7iijIWf4K5dhBtFJUnig((");
+    @Test(description = "Get badge recipient using invalid access key" , dataProvider = "invalidAccessKey")
+    public void getBadgeRecipientWithInvalidAccessKey(String accessKey) {
+        ValidatableResponse validatableResponse = GetBadgeRecipient.getBadgeRecipient(accessKey);
         Assert.assertEquals(validatableResponse.extract().statusCode(), HttpStatusCode.HTTP_400, "Verify status code");
         Assert.assertEquals(validatableResponse.extract().body().path("error_id"), Error.ERROR_ID_400, "Verify error_id fail");
         Assert.assertEquals(validatableResponse.extract().body().path("error_message"), Error.ERROR_MESSAGE_400, "Verify error_message fail");
