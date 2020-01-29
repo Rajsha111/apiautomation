@@ -1,0 +1,120 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "title": "The Root Schema",
+  "required": [
+    "items",
+    "has_more",
+    "quota_max",
+    "quota_remaining"
+  ],
+  "properties": {
+    "items": {
+      "$id": "#/properties/items",
+      "type": "array",
+      "title": "The Items Schema",
+      "items": {
+        "$id": "#/properties/items/items",
+        "type": "object",
+        "title": "The Items Schema",
+        "required": [
+          "badge_type",
+          "award_count",
+          "rank",
+          "badge_id",
+          "link",
+          "name"
+        ],
+        "properties": {
+          "badge_type": {
+            "$id": "#/properties/items/items/properties/badge_type",
+            "type": "string",
+            "title": "The Badge_type Schema",
+            "default": "",
+            "examples": [
+              "tag_based"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "award_count": {
+            "$id": "#/properties/items/items/properties/award_count",
+            "type": "integer",
+            "title": "The Award_count Schema",
+            "default": 0,
+            "examples": [
+              36
+            ]
+          },
+          "rank": {
+            "$id": "#/properties/items/items/properties/rank",
+            "type": "string",
+            "title": "The Rank Schema",
+            "default": "",
+            "examples": [
+              "bronze"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "badge_id": {
+            "$id": "#/properties/items/items/properties/badge_id",
+            "type": "integer",
+            "title": "The Badge_id Schema",
+            "default": 0,
+            "examples": [
+              263
+            ]
+          },
+          "link": {
+            "$id": "#/properties/items/items/properties/link",
+            "type": "string",
+            "title": "The Link Schema",
+            "default": "",
+            "examples": [
+              "https://stackoverflow.com/badges/263/cryptography"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "name": {
+            "$id": "#/properties/items/items/properties/name",
+            "type": "string",
+            "title": "The Name Schema",
+            "default": "",
+            "examples": [
+              "cryptography"
+            ],
+            "pattern": "^(.*)$"
+          }
+        }
+      }
+    },
+    "has_more": {
+      "$id": "#/properties/has_more",
+      "type": "boolean",
+      "title": "The Has_more Schema",
+      "default": false,
+      "examples": [
+        true
+      ]
+    },
+    "quota_max": {
+      "$id": "#/properties/quota_max",
+      "type": "integer",
+      "title": "The Quota_max Schema",
+      "default": 0,
+      "examples": [
+        10000
+      ]
+    },
+    "quota_remaining": {
+      "$id": "#/properties/quota_remaining",
+      "type": "integer",
+      "title": "The Quota_remaining Schema",
+      "default": 0,
+      "examples": [
+        9964
+      ]
+    }
+  }
+}

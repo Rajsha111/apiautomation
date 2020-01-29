@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Automation Test For API" verbose="1">
+
+    <test name="Verify primary header is selected by default">
+        <classes>
+            <class name="org.cc.test.badges.GetBadgesApiTest"/>
+          <!--  <class name="org.cc.test.badges.GetBadgesNegativeTest"/>-->
+        </classes>
+    </test>
+</suite>

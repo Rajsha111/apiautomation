@@ -1,0 +1,184 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "title": "The Root Schema",
+  "required": [
+    "items",
+    "has_more",
+    "quota_max",
+    "quota_remaining"
+  ],
+  "properties": {
+    "items": {
+      "$id": "#/properties/items",
+      "type": "array",
+      "title": "The Items Schema",
+      "items": {
+        "$id": "#/properties/items/items",
+        "type": "object",
+        "title": "The Items Schema",
+        "required": [
+          "user",
+          "badge_type",
+          "rank",
+          "badge_id",
+          "link",
+          "name"
+        ],
+        "properties": {
+          "user": {
+            "$id": "#/properties/items/items/properties/user",
+            "type": "object",
+            "title": "The User Schema",
+            "required": [
+              "reputation",
+              "user_id",
+              "user_type",
+              "profile_image",
+              "display_name",
+              "link"
+            ],
+            "properties": {
+              "reputation": {
+                "$id": "#/properties/items/items/properties/user/properties/reputation",
+                "type": "integer",
+                "title": "The Reputation Schema",
+                "default": 0,
+                "examples": [
+                  1
+                ]
+              },
+              "user_id": {
+                "$id": "#/properties/items/items/properties/user/properties/user_id",
+                "type": "integer",
+                "title": "The User_id Schema",
+                "default": 0,
+                "examples": [
+                  12808456
+                ]
+              },
+              "user_type": {
+                "$id": "#/properties/items/items/properties/user/properties/user_type",
+                "type": "string",
+                "title": "The User_type Schema",
+                "default": "",
+                "examples": [
+                  "registered"
+                ],
+                "pattern": "^(.*)$"
+              },
+              "profile_image": {
+                "$id": "#/properties/items/items/properties/user/properties/profile_image",
+                "type": "string",
+                "title": "The Profile_image Schema",
+                "default": "",
+                "examples": [
+                  "https://www.gravatar.com/avatar/ebc10db3ca69200c33f32f14bb2ea3bd?s=128&d=identicon&r=PG&f=1"
+                ],
+                "pattern": "^(.*)$"
+              },
+              "display_name": {
+                "$id": "#/properties/items/items/properties/user/properties/display_name",
+                "type": "string",
+                "title": "The Display_name Schema",
+                "default": "",
+                "examples": [
+                  "cillied5fq"
+                ],
+                "pattern": "^(.*)$"
+              },
+              "link": {
+                "$id": "#/properties/items/items/properties/user/properties/link",
+                "type": "string",
+                "title": "The Link Schema",
+                "default": "",
+                "examples": [
+                  "https://stackoverflow.com/users/12808456/cillied5fq"
+                ],
+                "pattern": "^(.*)$"
+              }
+            }
+          },
+          "badge_type": {
+            "$id": "#/properties/items/items/properties/badge_type",
+            "type": "string",
+            "title": "The Badge_type Schema",
+            "default": "",
+            "examples": [
+              "named"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "rank": {
+            "$id": "#/properties/items/items/properties/rank",
+            "type": "string",
+            "title": "The Rank Schema",
+            "default": "",
+            "examples": [
+              "bronze"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "badge_id": {
+            "$id": "#/properties/items/items/properties/badge_id",
+            "type": "integer",
+            "title": "The Badge_id Schema",
+            "default": 0,
+            "examples": [
+              9
+            ]
+          },
+          "link": {
+            "$id": "#/properties/items/items/properties/link",
+            "type": "string",
+            "title": "The Link Schema",
+            "default": "",
+            "examples": [
+              "https://stackoverflow.com/badges/9/autobiographer"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "name": {
+            "$id": "#/properties/items/items/properties/name",
+            "type": "string",
+            "title": "The Name Schema",
+            "default": "",
+            "examples": [
+              "Autobiographer"
+            ],
+            "pattern": "^(.*)$"
+          }
+        }
+      }
+    },
+    "has_more": {
+      "$id": "#/properties/has_more",
+      "type": "boolean",
+      "title": "The Has_more Schema",
+      "default": false,
+      "examples": [
+        true
+      ]
+    },
+    "quota_max": {
+      "$id": "#/properties/quota_max",
+      "type": "integer",
+      "title": "The Quota_max Schema",
+      "default": 0,
+      "examples": [
+        10000
+      ]
+    },
+    "quota_remaining": {
+      "$id": "#/properties/quota_remaining",
+      "type": "integer",
+      "title": "The Quota_remaining Schema",
+      "default": 0,
+      "examples": [
+        9965
+      ]
+    }
+  }
+}
